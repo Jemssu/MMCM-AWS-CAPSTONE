@@ -1,10 +1,7 @@
 import React from "react";
 
 const ProductCard = ({ product, openViewModal, openEditModal }) => {
-  const { imageUrl, name, category, price, stock, isActive, onSale } = product;
-
-  // Determine color for price based on 'onSale' status
-  const priceColor = onSale ? "text-red-600" : "text-gray-800";
+  const { imageUrl, name, category, originalPrice, salePrice, stock, isActive, onSale } = product;
 
   // Determine color and text for active status
   const statusColor = isActive ? "text-green-600" : "text-red-600";
@@ -37,8 +34,15 @@ const ProductCard = ({ product, openViewModal, openEditModal }) => {
         <p className="text-sm text-gray-500 line-clamp-2">
           Stock: {stock} | Status: <span className={statusColor}>{statusText}</span>
         </p>
-        <p className={`mt-3 text-lg font-bold ${priceColor}`}>
-          ₱{price.toFixed(2)}
+        <p className="mt-3 text-lg font-bold">
+          {onSale ? (
+            <>
+              <span className="text-gray-400 line-through mr-2">₱{originalPrice.toFixed(2)}</span>
+              <span className="text-red-600">₱{salePrice.toFixed(2)}</span>
+            </>
+          ) : (
+            <span className="text-gray-800">₱{originalPrice.toFixed(2)}</span>
+          )}
         </p>
         <div className="mt-4 flex gap-2">
           <button

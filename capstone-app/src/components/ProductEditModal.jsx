@@ -44,26 +44,42 @@ const ProductEditModal = ({ isEditModalOpen, closeEditModal, productToEdit, edit
             ></textarea>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">Category</label>
-            <input
-              type="text"
-              name="category"
-              value={editProductForm.category}
-              onChange={handleEditChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Price</label>
+            <label className="block text-sm font-medium text-gray-700">Original Price</label>
             <input
               type="number"
-              name="price"
-              value={editProductForm.price}
+              name="originalPrice"
+              value={editProductForm.originalPrice}
               onChange={handleEditChange}
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500"
               step="0.01"
             />
           </div>
+          <div className="flex items-center">
+            <input
+              type="checkbox"
+              id="sale"
+              name="onSale"
+              checked={editProductForm.onSale}
+              onChange={handleEditChange}
+              className="h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+            />
+            <label htmlFor="sale" className="ml-2 block text-sm text-gray-900">
+              On Sale
+            </label>
+          </div>
+          {editProductForm.onSale && (
+            <div>
+              <label className="block text-sm font-medium text-gray-700">Sale Price</label>
+              <input
+                type="number"
+                name="salePrice"
+                value={editProductForm.salePrice}
+                onChange={handleEditChange}
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500"
+                step="0.01"
+              />
+            </div>
+          )}
           <div>
             <label className="block text-sm font-medium text-gray-700">Stock Amount</label>
             <div className="flex items-center mt-1">
@@ -92,22 +108,9 @@ const ProductEditModal = ({ isEditModalOpen, closeEditModal, productToEdit, edit
           <div className="flex items-center">
             <input
               type="checkbox"
-              id="sale"
-              name="sale"
-              checked={editProductForm.sale}
-              onChange={handleEditChange}
-              className="h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
-            />
-            <label htmlFor="sale" className="ml-2 block text-sm text-gray-900">
-              On Sale
-            </label>
-          </div>
-          <div className="flex items-center">
-            <input
-              type="checkbox"
               id="active"
-              name="active"
-              checked={editProductForm.active}
+              name="isActive"
+              checked={editProductForm.isActive}
               onChange={handleEditChange}
               className="h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
             />

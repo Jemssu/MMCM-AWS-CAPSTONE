@@ -177,8 +177,15 @@ const ProductCatalogue = () => {
                     <p className="text-sm text-gray-500 line-clamp-2">
                       {product.description}
                     </p>
-                    <p className="mt-3 text-lg font-bold text-gray-800">
-                      ₱{product.price.toFixed(2)}
+                    <p className="mt-3 text-lg font-bold">
+                      {product.onSale ? (
+                        <>
+                          <span className="text-gray-400 line-through mr-2">₱{product.originalPrice.toFixed(2)}</span>
+                          <span className="text-red-600">₱{product.salePrice.toFixed(2)}</span>
+                        </>
+                      ) : (
+                        <span className="text-gray-800">₱{product.originalPrice.toFixed(2)}</span>
+                      )}
                     </p>
                   </div>
                 </div>
@@ -254,11 +261,6 @@ const ProductCatalogue = () => {
           <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
             <svg className="w-8 h-8 text-gray-400 hover:text-blue-600 transition-colors" fill="currentColor" viewBox="0 0 24 24">
               <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.908c0-.853.183-1.428 1.429-1.428h2.071v-4h-3.29c-3.415 0-4.71 2.37-4.71 4.296v2.104z"></path>
-            </svg>
-          </a>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <svg className="w-8 h-8 text-gray-400 hover:text-pink-500 transition-colors" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07c3.252.148 4.672 1.624 4.816 4.85.058 1.267.069 1.647.069 4.85s-.012 3.584-.069 4.85c-.144 3.227-1.564 4.654-4.816 4.85-.058.028-1.267.069-4.85.069s-3.584-.012-4.85-.069c-3.252-.144-4.672-1.564-4.816-4.816-.058-1.267-.069-1.647-.069-4.85s.012-3.584.069-4.85c.144-3.252 1.564-4.672 4.816-4.816 1.267-.058 1.647-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.203-6.162 2.115-6.364 6.364-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.202 4.249 2.115 6.052 6.364 6.364 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c4.249-.202 6.052-2.115 6.364-6.364.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.202-4.249-2.115-6.052-6.364-6.364-1.28-.058-1.688-.072-4.947-.072zM12 7.294c-2.894 0-5.241 2.347-5.241 5.241s2.347 5.241 5.241 5.241 5.241-2.347 5.241-5.241-2.347-5.241-5.241-5.241zm0 8.294c-1.689 0-3.053-1.364-3.053-3.053s1.364-3.053 3.053-3.053 3.053 1.364 3.053 3.053-1.364 3.053-3.053 3.053zm6.381-11.309c-.895 0-1.621.726-1.621 1.621s.726 1.621 1.621 1.621 1.621-.726 1.621-1.621-.726-1.621-1.621-1.621z"></path>
             </svg>
           </a>
           <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">

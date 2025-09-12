@@ -21,9 +21,10 @@ const InventoryManagement = () => {
   const [editProductForm, setEditProductForm] = useState({
     name: "",
     description: "",
-    price: 0,
-    sale: false,
-    active: true,
+    originalPrice: 0, // Updated from 'price'
+    salePrice: 0, // Added for sale products
+    onSale: false,
+    isActive: true,
     stock: 0,
     category: "",
   });
@@ -84,9 +85,10 @@ const InventoryManagement = () => {
       setEditProductForm({
         name: product.name,
         description: product.description,
-        price: product.price,
-        sale: product.onSale || false,
-        active: product.isActive !== false,
+        originalPrice: product.originalPrice,
+        salePrice: product.salePrice || 0, // Set to 0 if not on sale
+        onSale: product.onSale || false,
+        isActive: product.isActive !== false,
         stock: product.stock,
         category: product.category,
       });
@@ -94,9 +96,10 @@ const InventoryManagement = () => {
       setEditProductForm({
         name: "",
         description: "",
-        price: 0,
-        sale: false,
-        active: true,
+        originalPrice: 0,
+        salePrice: 0,
+        onSale: false,
+        isActive: true,
         stock: 0,
         category: "",
       });
@@ -125,7 +128,8 @@ const InventoryManagement = () => {
   };
 
   const saveProduct = () => {
-    if (!editProductForm.name || !editProductForm.price || !editProductForm.category || !editProductForm.description) {
+    // Check for required fields based on the new structure
+    if (!editProductForm.name || !editProductForm.originalPrice || !editProductForm.category || !editProductForm.description) {
       document.getElementById('edit-error-message').innerText = "Please fill in all required fields.";
       return;
     }
@@ -133,7 +137,7 @@ const InventoryManagement = () => {
 
     if (productToEdit) {
       const updatedProducts = products.map(p =>
-        p.id === productToEdit.id ? { ...p, ...editProductForm, onSale: editProductForm.sale, isActive: editProductForm.active } : p
+        p.id === productToEdit.id ? { ...p, ...editProductForm } : p
       );
       setProducts(updatedProducts);
     } else {
@@ -141,8 +145,6 @@ const InventoryManagement = () => {
         id: `prod_${products.length + 1}`,
         imageUrl: `https://placehold.co/400x400/94a3b8/ffffff?text=${editProductForm.name}`,
         ...editProductForm,
-        onSale: editProductForm.sale,
-        isActive: editProductForm.active,
       };
       setProducts([...products, newProduct]);
     }
@@ -251,6 +253,7 @@ const InventoryManagement = () => {
                 product={product}
                 openViewModal={openViewModal}
                 openEditModal={openEditModal}
+                isStaffView={true} // Passed as true to enable staff-specific features
               />
             ))}
           </div>
@@ -290,6 +293,7 @@ const InventoryManagement = () => {
         productToView={productToView}
         closeViewModal={closeViewModal}
         openEditModal={openEditModal}
+        isStaffView={true} // Passed as true to enable staff-specific features
       />
 
       <ProductEditModal
