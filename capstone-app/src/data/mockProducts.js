@@ -1,6 +1,3 @@
-// Mock data to simulate products from a database.
-// This will be replaced with data from your AWS backend later.
-
 export const MOCK_PRODUCTS = [
   {
     id: "prod_1",
