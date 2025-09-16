@@ -329,11 +329,19 @@ const LandingPage = () => {
         className="bg-gradient-to-br from-[#4b2e2b] via-[#3a211f] to-[#4b2e2b] text-[#f5f5dc] min-h-screen flex items-center"
         style={{ paddingTop: `${headerHeight}px` }}
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div className="absolute inset-0 w-full h-full z-0">
+          <PhotoSlider />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#4b2e2bcc] via-[#3a211fcc] to-[#4b2e2bcc]"></div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-              Welcome to <span className="text-[#d2b48c]">Show Idéa</span>
+              Welcome to <span className="text-[#d2b48c]">Show Idea</span>
             </h1>
+            <h2 className="text-5xl md:text-5xl italic mb-6 leading-tight">
+              Beauty Without <span className="text-[#d2b48c]">Boundaries</span>
+            </h2>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
               Discover amazing products that will transform your life. Quality, innovation, and excellence in every item we offer.
             </p>
@@ -638,5 +646,43 @@ const LandingPage = () => {
     </div>
   );
 };
+function PhotoSlider() {
+  const images = [
+    "https://cdn.discordapp.com/attachments/1416781049605914704/1417494241747140608/SnapInsta.to_466484450_542463788572211_2252057548062968539_n.jpg?ex=68caafe3&is=68c95e63&hm=0d573340266acb5986772fdc3a749a75cb3c9b00e014db3a8b34513ef973bd17&",
+    "https://cdn.discordapp.com/attachments/1416781049605914704/1417494256159035462/SnapInsta.to_466490430_570475658851457_6668399993285489413_n.jpg?ex=68caafe6&is=68c95e66&hm=89dd346617568c282e56361a7d5ca96037ea529fa71dc324cbf9363d627150fd&",
+    "https://cdn.discordapp.com/attachments/1416781049605914704/1417494271585550486/SnapInsta.to_466452505_1456305195051671_8460787894809979319_n.jpg?ex=68caafea&is=68c95e6a&hm=ce30db41c32ce3357c1b5ab3e3ae25ef8857ad896f624532670926427fc1070f&",
+  ];
+  const [current, setCurrent] = React.useState(0);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  return (
+    <div className="w-full h-full absolute inset-0 overflow-hidden">
+      <div
+        className="flex h-full transition-transform duration-700"
+        style={{
+          width: `${images.length * 100}%`,
+          transform: `translateX(-${current * (100 / images.length)}%)`,
+        }}
+      >
+        {images.map((img, idx) => (
+          <img
+            key={img}
+            src={img}
+            alt={`Slide ${idx + 1}`}
+            className="w-full h-full object-cover flex-shrink-0"
+            style={{ width: `${100 / images.length}%` }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 
 export default LandingPage;
