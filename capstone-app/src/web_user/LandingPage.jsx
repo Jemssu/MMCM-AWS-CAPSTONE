@@ -253,11 +253,11 @@ const LandingPage = () => {
 
   const shouldShowSoldOut = (productGroup) => {
     if (productGroup.hasVariants) {
-      // For products with variants, show SOLD OUT only if ALL variants are inactive
-      return productGroup.variants.every(variant => !variant.isActive);
+      // For products with variants, show SOLD OUT only if ALL variants are inactive/out of stock
+      return productGroup.variants.every(variant => !variant.isActive || variant.stock === 0);
     } else {
-      // For single products, show SOLD OUT if the product is inactive
-      return !productGroup.displayProduct.isActive;
+      // For single products, show SOLD OUT if the product is inactive or has no stock
+      return !productGroup.displayProduct.isActive || productGroup.displayProduct.stock === 0;
     }
   };
 
@@ -484,7 +484,7 @@ const LandingPage = () => {
                       ) : (
                         <span className="text-gray-800 font-bold">₱{displayProduct.originalPrice.toFixed(2)}</span>
                       )}
-                      {!displayProduct.isActive && (
+                      {shouldShowSoldOut(productGroup) && (
                         <p className="text-red-500 font-semibold text-sm mt-1">SOLD OUT</p>
                       )}
                     </div>
