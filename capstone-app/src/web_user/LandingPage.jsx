@@ -3,29 +3,6 @@ import { PRODUCT_LIST } from "../data/productList.js";
 
 // Footer Component
 const Footer = () => {
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-  const [loginForm, setLoginForm] = useState({ username: '', password: '' });
-
-  const handleLoginSubmit = (e) => {
-    e.preventDefault();
-    console.log('Login attempt:', loginForm);
-    if (loginForm.username === 'admin' && loginForm.password === 'password') {
-      alert('Login successful! Redirecting to staff dashboard...');
-      setIsLoginModalOpen(false);
-    } else {
-      alert('Invalid credentials. Please try again.');
-    }
-    setLoginForm({ username: '', password: '' });
-  };
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setLoginForm(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
   return (
     <footer className="bg-[#4b2e2b] shadow-inner mt-8 py-8 text-center text-[#f5f5dc] text-sm flex flex-col items-center">
       <div className="flex space-x-6 mb-4">
@@ -51,6 +28,44 @@ const Footer = () => {
     </footer>
   );
 };
+
+function PhotoSlider() {
+  const images = [
+    "https://cdn.discordapp.com/attachments/1416781049605914704/1417494241747140608/SnapInsta.to_466484450_542463788572211_2252057548062968539_n.jpg?ex=68caafe3&is=68c95e63&hm=0d573340266acb5986772fdc3a749a75cb3c9b00e014db3a8b34513ef973bd17&",
+    "https://cdn.discordapp.com/attachments/1416781049605914704/1417494256159035462/SnapInsta.to_466490430_570475658851457_6668399993285489413_n.jpg?ex=68caafe6&is=68c95e66&hm=89dd346617568c282e56361a7d5ca96037ea529fa71dc324cbf9363d627150fd&",
+    "https://cdn.discordapp.com/attachments/1416781049605914704/1417494271585550486/SnapInsta.to_466452505_1456305195051671_8460787894809979319_n.jpg?ex=68caafea&is=68c95e6a&hm=ce30db41c32ce3357c1b5ab3e3ae25ef8857ad896f624532670926427fc1070f&",
+  ];
+  const [current, setCurrent] = React.useState(0);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 10000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  return (
+    <div className="w-full h-full absolute inset-0 overflow-hidden">
+      <div
+        className="flex h-full transition-transform duration-700"
+        style={{
+          width: `${images.length * 100}%`,
+          transform: `translateX(-${current * (100 / images.length)}%)`,
+        }}
+      >
+        {images.map((img, idx) => (
+          <img
+            key={img}
+            src={img}
+            alt={`Slide ${idx + 1}`}
+            className="w-full h-full object-cover flex-shrink-0"
+            style={{ width: `${100 / images.length}%` }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 // Product modal component
 const ProductViewModal = ({ product, onClose, onVariantChange, variants }) => {
@@ -465,7 +480,6 @@ const LandingPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
             {currentProducts.map((productGroup, index) => {
               const displayProduct = getDisplayProduct(productGroup);
-              const baseId = productGroup.displayProduct.id.substring(0, productGroup.displayProduct.id.lastIndexOf('-'));
               
               return (
                 <div key={index} className="bg-[#f5f5dc] rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden border border-[#d2b48c]">
@@ -646,43 +660,4 @@ const LandingPage = () => {
     </div>
   );
 };
-function PhotoSlider() {
-  const images = [
-    "https://cdn.discordapp.com/attachments/1416781049605914704/1417494241747140608/SnapInsta.to_466484450_542463788572211_2252057548062968539_n.jpg?ex=68caafe3&is=68c95e63&hm=0d573340266acb5986772fdc3a749a75cb3c9b00e014db3a8b34513ef973bd17&",
-    "https://cdn.discordapp.com/attachments/1416781049605914704/1417494256159035462/SnapInsta.to_466490430_570475658851457_6668399993285489413_n.jpg?ex=68caafe6&is=68c95e66&hm=89dd346617568c282e56361a7d5ca96037ea529fa71dc324cbf9363d627150fd&",
-    "https://cdn.discordapp.com/attachments/1416781049605914704/1417494271585550486/SnapInsta.to_466452505_1456305195051671_8460787894809979319_n.jpg?ex=68caafea&is=68c95e6a&hm=ce30db41c32ce3357c1b5ab3e3ae25ef8857ad896f624532670926427fc1070f&",
-  ];
-  const [current, setCurrent] = React.useState(0);
-
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
-    }, 2500);
-    return () => clearInterval(interval);
-  }, [images.length]);
-
-  return (
-    <div className="w-full h-full absolute inset-0 overflow-hidden">
-      <div
-        className="flex h-full transition-transform duration-700"
-        style={{
-          width: `${images.length * 100}%`,
-          transform: `translateX(-${current * (100 / images.length)}%)`,
-        }}
-      >
-        {images.map((img, idx) => (
-          <img
-            key={img}
-            src={img}
-            alt={`Slide ${idx + 1}`}
-            className="w-full h-full object-cover flex-shrink-0"
-            style={{ width: `${100 / images.length}%` }}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
-
-
 export default LandingPage;
