@@ -425,27 +425,20 @@ const LandingPage = () => {
                     </p>
                     
                     {productGroup.hasVariants && (
-                      <div className="mb-3">
+                      <div className="mb-3 pointer-events-none">
                         <div className="text-xs text-gray-500 mb-2">Available colors:</div>
                         <div className="flex flex-wrap gap-1">
                           {productGroup.variants.map((variant) => (
-                            <button
+                            <div
                               key={variant.id}
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                setSelectedVariants(prev => ({
-                                  ...prev,
-                                  [baseId]: variant.variant
-                                }));
-                              }}
-                              className={`text-xs px-2 py-1 rounded border transition-colors ${
-                                (selectedVariants[baseId] || displayProduct.variant) === variant.variant
+                              className={`text-xs px-2 py-1 rounded border cursor-default ${
+                                variant.isActive
                                   ? 'bg-purple-100 border-purple-300 text-purple-700'
-                                  : 'bg-gray-100 border-gray-300 text-gray-600 hover:bg-gray-200'
+                                  : 'bg-gray-300 border-gray-400 text-gray-500'
                               }`}
                             >
                               {variant.variant.match(/#(.+)/)?.[1] || variant.variant}
-                            </button>
+                            </div>
                           ))}
                         </div>
                       </div>
