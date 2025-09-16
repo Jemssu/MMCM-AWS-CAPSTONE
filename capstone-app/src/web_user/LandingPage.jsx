@@ -40,7 +40,7 @@ function PhotoSlider() {
   React.useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
-    }, 10000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [images.length]);
 
