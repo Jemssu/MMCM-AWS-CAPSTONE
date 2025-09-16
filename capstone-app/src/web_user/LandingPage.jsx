@@ -438,7 +438,7 @@ const LandingPage = () => {
                       </span>
                     )}
                     <img
-                      src={displayProduct.imageUrl}
+                      src={productGroup.displayProduct.baseUrl || productGroup.displayProduct.imageUrl}
                       alt={displayProduct.name}
                       className="w-full h-48 object-cover object-center"
                       onError={(e) =>

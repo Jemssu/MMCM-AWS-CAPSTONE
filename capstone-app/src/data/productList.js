@@ -10,7 +10,7 @@ export const PRODUCT_LIST = [
         originalPrice: 349.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y13-1",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y13-1",    
         stock: 100,
         isActive: true,
     },
