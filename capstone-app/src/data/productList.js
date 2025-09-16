@@ -158,5 +158,4 @@ export const PRODUCT_LIST = [
         stock: 100,
         isActive: true,
     },
-    //ROSE ESSENTIAL OILSILKY AND SLIPPERY NON STICK CUP LIPSTICK
 ];
