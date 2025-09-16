@@ -251,6 +251,16 @@ const LandingPage = () => {
     return productGroup.variants.find(v => v.variant === currentVariant) || productGroup.displayProduct;
   };
 
+  const shouldShowSoldOut = (productGroup) => {
+    if (productGroup.hasVariants) {
+      // For products with variants, show SOLD OUT only if ALL variants are inactive
+      return productGroup.variants.every(variant => !variant.isActive);
+    } else {
+      // For single products, show SOLD OUT if the product is inactive
+      return !productGroup.displayProduct.isActive;
+    }
+  };
+
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Navigation Header */}
