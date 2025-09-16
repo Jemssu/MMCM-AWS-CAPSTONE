@@ -38,4 +38,5 @@ export const PRODUCT_LIST = [
         stock: 100,
         isActive: true,
     },
+    
 ];
