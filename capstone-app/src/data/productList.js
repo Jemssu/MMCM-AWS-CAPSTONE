@@ -1,0 +1,28 @@
+export const PRODUCT_LIST = [
+    {
+        id: "Y13-1",
+        name: "Advanced Customization Makeup Holding Lip Glaze",
+        category: "LIP",
+        variant: "201# Berry Plum",
+        description: "replace me",
+        originalPrice: 5000.00,
+        onSale: false,
+        salePrice: 0.00,
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y13-1",        
+        stock: 100,
+        isActive: true,
+    },
+    {
+        id: "Y13-2",
+        name: "Advanced Customization Makeup Holding Lip Glaze",
+        category: "LIP",
+        variant: "188# Black Tea Brown",
+        description: "replace me",
+        originalPrice: 5000.00,
+        onSale: false,
+        salePrice: 0.00,
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y13-2",        
+        stock: 100,
+        isActive: true,
+    },
+];
