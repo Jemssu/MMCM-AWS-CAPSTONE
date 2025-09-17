@@ -10,7 +10,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/admin" element={<AdminPage />} /> {/* optional */}
+        <Route path="/admin" element={<AdminPage />} /> {/* PUSHED */}
       </Routes>
     </Router>
   );
