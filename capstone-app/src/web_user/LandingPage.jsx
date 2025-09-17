@@ -320,7 +320,7 @@ const LandingPage = () => {
       >
         <div className="flex items-center space-x-3">
           <img 
-            src="../logo.png" 
+            src="https://media.discordapp.net/attachments/1416781049605914704/1417466815545606195/ShowIdeaLogo.png?ex=68cb3f18&is=68c9ed98&hm=f752c20a69fdd18ca8d0389a2f6c5ae2286c70b175ea239d393e91934165bbd7&=&format=webp&quality=lossless" 
             alt="Show Idéa Logo" 
             className="w-10 h-10 rounded-full object-cover"
           />
