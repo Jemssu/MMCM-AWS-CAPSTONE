@@ -410,60 +410,187 @@ const LandingPage = () => {
       </section>
 
       {/* About Us Section */}
-      <section ref={aboutRef} className="py-20 bg-[#f5f5dc]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section ref={aboutRef} className="py-20 bg-gradient-to-br from-[#f5f5dc] via-[#fff8e7] to-[#f0e6d2] relative overflow-hidden">
+        {/* Decorative Elements */}
+        <div className="absolute top-10 left-10 w-20 h-20 bg-[#d2b48c] rounded-full opacity-10"></div>
+        <div className="absolute bottom-10 right-10 w-32 h-32 bg-[#7a5c58] rounded-full opacity-5"></div>
+        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-[#4b2e2b] rounded-full opacity-5"></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-extrabold text-[#4b2e2b] mb-4">About Us</h2>
-            <p className="text-xl text-[#7a5c58] max-w-3xl mx-auto">
-              We're passionate about bringing you the finest products with exceptional quality and service.
+            <h2 className="text-5xl font-extrabold text-[#4b2e2b] mb-6 leading-tight">About Show Idéa</h2>
+            <p className="text-xl text-[#7a5c58] max-w-4xl mx-auto leading-relaxed">
+              Nurturing beauty through nature's finest ingredients in the heart of Davao City
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-3xl font-bold text-[#4b2e2b] mb-6">Our Story</h3>
-              <p className="text-lg text-[#4b2e2b] mb-6">
-                Founded with a vision to provide exceptional products and outstanding customer service, 
-                we've been serving our community with dedication and passion. Our commitment to quality 
-                and innovation drives everything we do.
-              </p>
-              <p className="text-lg text-[#4b2e2b] mb-6">
-                From humble beginnings to becoming a trusted name in the industry, we continue to grow 
-                while maintaining our core values of integrity, excellence, and customer satisfaction.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-[#7a5c58] rounded-full mr-3"></div>
-                  <span className="text-[#4b2e2b]">Quality Products</span>
+          {/* Main Story Section */}
+          <div className="mb-20">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-8">
+                <div className="bg-white/50 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-[#d2b48c]/30">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#4b2e2b] to-[#7a5c58] rounded-full flex items-center justify-center mr-4">
+                      <svg className="w-6 h-6 text-[#f5f5dc]" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12,2C15.31,2 18,4.66 18,7.95C18,12.41 12,19 12,19S6,12.41 6,7.95C6,4.66 8.69,2 12,2M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6Z"/>
+                      </svg>
+                    </div>
+                    <h3 className="text-3xl font-bold text-[#4b2e2b]">Our Journey</h3>
+                  </div>
+                  <p className="text-lg text-[#4b2e2b] leading-relaxed mb-4">
+                    Show Idéa – Davao began as a passionate venture in the heart of Davao City, specializing in 
+                    <span className="font-semibold text-[#7a5c58]"> plant-based beauty and personal care products</span>. 
+                    From our very first day, we believed in the power of nature to enhance and nurture beauty.
+                  </p>
+                  <p className="text-lg text-[#4b2e2b] leading-relaxed">
+                    What started as a small operation has grown into a thriving business, but our roots remain the same – 
+                    a commitment to providing our community with the finest natural products that celebrate beauty without compromising on quality or environmental responsibility.
+                  </p>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-[#7a5c58] rounded-full mr-3"></div>
-                  <span className="text-[#4b2e2b]">Fast Shipping</span>
+
+                <div className="bg-gradient-to-r from-[#4b2e2b] to-[#7a5c58] p-8 rounded-2xl text-[#f5f5dc] shadow-xl">
+                  <div className="flex items-center mb-4">
+                    <svg className="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
+                    </svg>
+                    <h4 className="text-xl font-bold">Our Commitment</h4>
+                  </div>
+                  <p className="leading-relaxed opacity-95">
+                    As the retail landscape evolves, so do we. We're embracing modern solutions while staying true to our artisanal roots, 
+                    ensuring that every customer receives the personal attention and quality products that have made us who we are today.
+                  </p>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-[#7a5c58] rounded-full mr-3"></div>
-                  <span className="text-[#4b2e2b]">24/7 Support</span>
+              </div>
+
+              <div className="space-y-6">
+                <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-[#d2b48c]/30">
+                  <h4 className="text-2xl font-bold text-[#4b2e2b] mb-6 text-center">Our Growing Impact</h4>
+                  <div className="grid grid-cols-2 gap-6">
+                    <div className="text-center p-4 bg-gradient-to-br from-[#f5f5dc] to-[#f0e6d2] rounded-xl">
+                      <div className="text-4xl font-bold text-[#4b2e2b] mb-2">61+</div>
+                      <div className="text-[#7a5c58] font-medium">Premium Products</div>
+                    </div>
+                    <div className="text-center p-4 bg-gradient-to-br from-[#f5f5dc] to-[#f0e6d2] rounded-xl">
+                      <div className="text-4xl font-bold text-[#4b2e2b] mb-2">1000+</div>
+                      <div className="text-[#7a5c58] font-medium">Satisfied Customers</div>
+                    </div>
+                    <div className="text-center p-4 bg-gradient-to-br from-[#f5f5dc] to-[#f0e6d2] rounded-xl">
+                      <div className="text-4xl font-bold text-[#4b2e2b] mb-2">100%</div>
+                      <div className="text-[#7a5c58] font-medium">Plant-Based</div>
+                    </div>
+                    <div className="text-center p-4 bg-gradient-to-br from-[#f5f5dc] to-[#f0e6d2] rounded-xl">
+                      <div className="text-4xl font-bold text-[#4b2e2b] mb-2">24/7</div>
+                      <div className="text-[#7a5c58] font-medium">Customer Care</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Values Cards */}
+                <div className="grid grid-cols-1 gap-4">
+                  <div className="bg-white/60 backdrop-blur-sm p-6 rounded-xl border border-[#d2b48c]/30 hover:shadow-lg transition-all">
+                    <div className="flex items-center">
+                      <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                        <svg className="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <h5 className="font-bold text-[#4b2e2b] mb-1">Natural & Sustainable</h5>
+                        <p className="text-sm text-[#7a5c58]">Eco-friendly products that care for you and the planet</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-white/60 backdrop-blur-sm p-6 rounded-xl border border-[#d2b48c]/30 hover:shadow-lg transition-all">
+                    <div className="flex items-center">
+                      <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                        <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10.1V11.9C14.8,12.2 14.6,12.5 14.3,12.5H9.7C9.4,12.5 9.2,12.2 9.2,11.9V10.1C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,9.5V10.8H13.5V9.5C13.5,8.7 12.8,8.2 12,8.2Z"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <h5 className="font-bold text-[#4b2e2b] mb-1">Quality Assured</h5>
+                        <p className="text-sm text-[#7a5c58]">Rigorously tested products for your safety and satisfaction</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="bg-[#f0e6d2] p-8 rounded-xl">
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-[#4b2e2b] mb-2">1000+</div>
-                  <div className="text-[#7a5c58]">Happy Customers</div>
+          </div>
+
+          {/* Mission & Vision Section */}
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            <div className="bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-[#d2b48c]/30 hover:shadow-xl transition-all">
+              <div className="flex items-center mb-6">
+                <div className="w-14 h-14 bg-gradient-to-br from-[#4b2e2b] to-[#7a5c58] rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-7 h-7 text-[#f5f5dc]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z"/>
+                  </svg>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-[#4b2e2b] mb-2">500+</div>
-                  <div className="text-[#7a5c58]">Products</div>
+                <h3 className="text-2xl font-bold text-[#4b2e2b]">Our Mission</h3>
+              </div>
+              <p className="text-[#4b2e2b] leading-relaxed text-lg">
+                To provide Davao City and beyond with premium plant-based beauty and personal care products 
+                that enhance natural beauty while promoting sustainable living and environmental consciousness.
+              </p>
+            </div>
+
+            <div className="bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-[#d2b48c]/30 hover:shadow-xl transition-all">
+              <div className="flex items-center mb-6">
+                <div className="w-14 h-14 bg-gradient-to-br from-[#7a5c58] to-[#4b2e2b] rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-7 h-7 text-[#f5f5dc]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12,2L13.09,8.26L22,9L14.74,16.26L16.18,24L12,21.18L7.82,24L9.26,16.26L2,9L10.91,8.26L12,2Z"/>
+                  </svg>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-[#4b2e2b] mb-2">5+</div>
-                  <div className="text-[#7a5c58]">Years Experience</div>
+                <h3 className="text-2xl font-bold text-[#4b2e2b]">Our Vision</h3>
+              </div>
+              <p className="text-[#4b2e2b] leading-relaxed text-lg">
+                To become the leading destination for natural beauty solutions in the Philippines, 
+                inspiring a generation to embrace their authentic beauty through nature's gifts.
+              </p>
+            </div>
+          </div>
+
+          {/* Why Choose Us Section */}
+          <div className="bg-gradient-to-r from-[#4b2e2b] to-[#7a5c58] rounded-3xl p-12 text-[#f5f5dc] shadow-2xl">
+            <h3 className="text-3xl font-bold text-center mb-12">Why Choose Show Idéa?</h3>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/>
+                  </svg>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-[#4b2e2b] mb-2">99%</div>
-                  <div className="text-[#7a5c58]">Satisfaction Rate</div>
+                <h4 className="text-xl font-bold mb-4">Handcrafted Excellence</h4>
+                <p className="opacity-90 leading-relaxed">
+                  Every product is carefully selected and curated to meet our high standards of quality and effectiveness.
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.5,12A1.5,1.5 0 0,1 16,10.5A1.5,1.5 0 0,1 17.5,9A1.5,1.5 0 0,1 19,10.5A1.5,1.5 0 0,1 17.5,12M14.5,8A1.5,1.5 0 0,1 13,6.5A1.5,1.5 0 0,1 14.5,5A1.5,1.5 0 0,1 16,6.5A1.5,1.5 0 0,1 14.5,8M9.5,8A1.5,1.5 0 0,1 8,6.5A1.5,1.5 0 0,1 9.5,5A1.5,1.5 0 0,1 11,6.5A1.5,1.5 0 0,1 9.5,8M6.5,12A1.5,1.5 0 0,1 5,10.5A1.5,1.5 0 0,1 6.5,9A1.5,1.5 0 0,1 8,10.5A1.5,1.5 0 0,1 6.5,12M12,3A9,9 0 0,0 3,12A9,9 0 0,0 12,21A1.5,1.5 0 0,0 13.5,19.5C13.5,19.11 13.35,18.76 13.11,18.5C12.88,18.23 12.73,17.88 12.73,17.5A1.5,1.5 0 0,1 14.23,16H16A5,5 0 0,0 21,11C21,6.58 16.97,3 12,3Z"/>
+                  </svg>
                 </div>
+                <h4 className="text-xl font-bold mb-4">Natural Ingredients</h4>
+                <p className="opacity-90 leading-relaxed">
+                  Plant-based formulations that are gentle on your skin and kind to the environment.
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z"/>
+                  </svg>
+                </div>
+                <h4 className="text-xl font-bold mb-4">Local Expertise</h4>
+                <p className="opacity-90 leading-relaxed">
+                  Deep understanding of Filipino beauty needs with personalized recommendations and care.
+                </p>
               </div>
             </div>
           </div>
