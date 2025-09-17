@@ -1,13 +1,18 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+
 import LandingPage from './web_user/LandingPage.jsx';
+import AdminPage from "./web_admin/AdminPage.jsx";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 font-sans">
-      
-      <LandingPage />
-    
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/admin" element={<AdminPage />} /> {/* optional */}
+      </Routes>
+    </Router>
   );
 }
 
