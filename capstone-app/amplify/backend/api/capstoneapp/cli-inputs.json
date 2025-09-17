@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "capstoneapp",
+    "serviceName": "AppSync",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 300,
+      "apiKeyExpirationDate": "2026-07-14T02:50:31.619Z",
+      "keyDescription": "AccessKey"
+    }
+  }
+}

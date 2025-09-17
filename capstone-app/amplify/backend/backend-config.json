@@ -1,0 +1,22 @@
+{
+  "api": {
+    "capstoneapp": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDate": "2026-07-14T02:50:31.619Z",
+              "apiKeyExpirationDays": 300,
+              "description": "AccessKey"
+            },
+            "authenticationType": "API_KEY"
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  }
+}

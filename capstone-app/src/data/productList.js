@@ -11,7 +11,7 @@ export const PRODUCT_LIST = [
         onSale: true,
         salePrice: 150.00,
         imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y13-1",    
-        baseUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y13 BASE",    
+        baseUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y13-BASE",    
         stock: 100,
         isActive: true,
     },
@@ -25,6 +25,7 @@ export const PRODUCT_LIST = [
         onSale: false,
         salePrice: 0.00,
         imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y13-2",        
+        baseUrl: "", // Added empty baseUrl
         stock: 100,
         isActive: true,
     },
@@ -37,7 +38,8 @@ export const PRODUCT_LIST = [
         originalPrice: 349.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y13-3",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y13-3",    
+        baseUrl: "", // Added empty baseUrl    
         stock: 100,
         isActive: true,
     },
@@ -50,7 +52,8 @@ export const PRODUCT_LIST = [
         originalPrice: 349.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y13-4",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y13-4", 
+        baseUrl: "", // Added empty baseUrl       
         stock: 100,
         isActive: true,
     },
@@ -63,7 +66,8 @@ export const PRODUCT_LIST = [
         originalPrice: 349.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y13-5",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y13-5", 
+        baseUrl: "", // Added empty baseUrl       
         stock: 100,
         isActive: true,
     },
@@ -76,7 +80,8 @@ export const PRODUCT_LIST = [
         originalPrice: 349.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y13-6",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y13-6", 
+        baseUrl: "", // Added empty baseUrl       
         stock: 100,
         isActive: true,
     },
@@ -104,7 +109,8 @@ export const PRODUCT_LIST = [
         originalPrice: 349.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y20-2",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y20-2",  
+        baseUrl: "", // Added empty baseUrl      
         stock: 100,
         isActive: true,
     },
@@ -117,7 +123,8 @@ export const PRODUCT_LIST = [
         originalPrice: 349.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y20-3",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y20-3", 
+        baseUrl: "", // Added empty baseUrl       
         stock: 100,
         isActive: true,
     },
@@ -130,7 +137,8 @@ export const PRODUCT_LIST = [
         originalPrice: 349.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y20-4",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y20-4",  
+        baseUrl: "", // Added empty baseUrl      
         stock: 100,
         isActive: true,
     },
@@ -143,7 +151,8 @@ export const PRODUCT_LIST = [
         originalPrice: 349.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y20-5",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y20-5",  
+        baseUrl: "", // Added empty baseUrl      
         stock: 100,
         isActive: true,
     },
@@ -156,7 +165,8 @@ export const PRODUCT_LIST = [
         originalPrice: 349.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y20-6",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y20-6", 
+        baseUrl: "", // Added empty baseUrl       
         stock: 100,
         isActive: true,
     },
@@ -184,7 +194,8 @@ export const PRODUCT_LIST = [
         originalPrice: 369.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y48-2",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y48-2",   
+        baseUrl: "", // Added empty baseUrl     
         stock: 100,
         isActive: true,
     },
@@ -197,7 +208,8 @@ export const PRODUCT_LIST = [
         originalPrice: 369.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y48-3",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y48-3",   
+        baseUrl: "", // Added empty baseUrl     
         stock: 100,
         isActive: true,
     },
@@ -210,7 +222,8 @@ export const PRODUCT_LIST = [
         originalPrice: 369.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y48-4",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y48-4",   
+        baseUrl: "", // Added empty baseUrl     
         stock: 100,
         isActive: true,
     },
@@ -223,7 +236,8 @@ export const PRODUCT_LIST = [
         originalPrice: 369.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y48-5",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y48-5",  
+        baseUrl: "", // Added empty baseUrl      
         stock: 100,
         isActive: true,
     },
@@ -236,7 +250,8 @@ export const PRODUCT_LIST = [
         originalPrice: 369.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y48-6",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y48-6",   
+        baseUrl: "", // Added empty baseUrl     
         stock: 100,
         isActive: true,
     },
@@ -264,7 +279,8 @@ export const PRODUCT_LIST = [
         originalPrice: 289.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y50-2",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y50-2",   
+        baseUrl: "", // Added empty baseUrl     
         stock: 100,
         isActive: true,
     },
@@ -277,7 +293,8 @@ export const PRODUCT_LIST = [
         originalPrice: 289.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y50-3",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y50-3",   
+        baseUrl: "", // Added empty baseUrl     
         stock: 100,
         isActive: true,
     },
@@ -290,7 +307,8 @@ export const PRODUCT_LIST = [
         originalPrice: 289.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y50-4",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y50-4", 
+        baseUrl: "", // Added empty baseUrl       
         stock: 100,
         isActive: true,
     },
@@ -303,7 +321,8 @@ export const PRODUCT_LIST = [
         originalPrice: 289.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y50-5",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y50-5",   
+        baseUrl: "", // Added empty baseUrl     
         stock: 100,
         isActive: true,
     },
@@ -316,7 +335,8 @@ export const PRODUCT_LIST = [
         originalPrice: 289.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y50-6",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y50-6", 
+        baseUrl: "", // Added empty baseUrl       
         stock: 100,
         isActive: true,
     },
@@ -344,7 +364,8 @@ export const PRODUCT_LIST = [
         originalPrice: 399.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y51-2",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y51-2",  
+        baseUrl: "", // Added empty baseUrl     
         stock: 100,
         isActive: true,
     },
@@ -357,7 +378,8 @@ export const PRODUCT_LIST = [
         originalPrice: 399.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y51-3",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y51-3",  
+        baseUrl: "", // Added empty baseUrl      
         stock: 100,
         isActive: true,
     },
@@ -370,7 +392,8 @@ export const PRODUCT_LIST = [
         originalPrice: 399.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y51-4",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y51-4", 
+        baseUrl: "", // Added empty baseUrl       
         stock: 100,
         isActive: false,
     },
@@ -383,7 +406,8 @@ export const PRODUCT_LIST = [
         originalPrice: 399.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y51-5",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y51-5",   
+        baseUrl: "", // Added empty baseUrl     
         stock: 100,
         isActive: true,
     },
@@ -396,7 +420,8 @@ export const PRODUCT_LIST = [
         originalPrice: 399.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y51-6",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y51-6",  
+        baseUrl: "", // Added empty baseUrl      
         stock: 100,
         isActive: false,
     },
@@ -424,7 +449,8 @@ export const PRODUCT_LIST = [
         originalPrice: 429.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y56-2",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y56-2",  
+        baseUrl: "", // Added empty baseUrl      
         stock: 100,
         isActive: true,
     },
@@ -437,7 +463,8 @@ export const PRODUCT_LIST = [
         originalPrice: 429.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y56-3",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y56-3", 
+        baseUrl: "", // Added empty baseUrl       
         stock: 100,
         isActive: true,
     },
@@ -450,7 +477,8 @@ export const PRODUCT_LIST = [
         originalPrice: 429.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y56-4",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y56-4",   
+        baseUrl: "", // Added empty baseUrl     
         stock: 100,
         isActive: true,
     },
@@ -463,7 +491,8 @@ export const PRODUCT_LIST = [
         originalPrice: 429.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y56-5",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y56-5", 
+        baseUrl: "", // Added empty baseUrl       
         stock: 100,
         isActive: true,
     },
@@ -476,7 +505,8 @@ export const PRODUCT_LIST = [
         originalPrice: 429.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y56-6",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y56-6",  
+        baseUrl: "", // Added empty baseUrl      
         stock: 100,
         isActive: true,
     },
@@ -504,7 +534,8 @@ export const PRODUCT_LIST = [
         originalPrice: 419.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y57-2",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y57-2",  
+        baseUrl: "", // Added empty baseUrl      
         stock: 100,
         isActive: true,
     },
@@ -517,7 +548,8 @@ export const PRODUCT_LIST = [
         originalPrice: 419.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y57-3",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y57-3", 
+        baseUrl: "", // Added empty baseUrl       
         stock: 100,
         isActive: true,
     },
@@ -530,7 +562,8 @@ export const PRODUCT_LIST = [
         originalPrice: 419.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y57-4",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y57-4", 
+        baseUrl: "", // Added empty baseUrl       
         stock: 100,
         isActive: true,
     },
@@ -543,7 +576,8 @@ export const PRODUCT_LIST = [
         originalPrice: 419.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y57-5",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y57-5", 
+        baseUrl: "", // Added empty baseUrl       
         stock: 100,
         isActive: true,
     },
@@ -556,7 +590,8 @@ export const PRODUCT_LIST = [
         originalPrice: 419.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y57-6",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y57-6",  
+        baseUrl: "", // Added empty baseUrl      
         stock: 100,
         isActive: true,
     },
@@ -585,7 +620,8 @@ export const PRODUCT_LIST = [
         originalPrice: 289.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y15-2",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y15-2",  
+        baseUrl: "", // Added empty baseUrl      
         stock: 100,
         isActive: true,
     },
@@ -598,7 +634,8 @@ export const PRODUCT_LIST = [
         originalPrice: 289.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y15-3",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y15-3",  
+        baseUrl: "", // Added empty baseUrl      
         stock: 100,
         isActive: true,
     },
@@ -656,7 +693,8 @@ export const PRODUCT_LIST = [
         originalPrice: 489.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y60-2",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y60-2", 
+        baseUrl: "", // Added empty baseUrl       
         stock: 100,
         isActive: false,
     },
@@ -669,7 +707,8 @@ export const PRODUCT_LIST = [
         originalPrice: 489.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y60-3",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y60-3", 
+        baseUrl: "", // Added empty baseUrl       
         stock: 100,
         isActive: true,
     },
@@ -714,7 +753,8 @@ export const PRODUCT_LIST = [
         originalPrice: 659.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y01-2",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y01-2",   
+        baseUrl: "", // Added empty baseUrl     
         stock: 100,
         isActive: false,
     },
@@ -757,7 +797,8 @@ export const PRODUCT_LIST = [
         originalPrice: 459.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y28-2",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y28-2",    
+        baseUrl: "", // Added empty baseUrl    
         stock: 100,
         isActive: true,
     },
@@ -785,7 +826,8 @@ export const PRODUCT_LIST = [
         originalPrice: 489.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y45-2",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y45-2", 
+        baseUrl: "", // Added empty baseUrl       
         stock: 100,
         isActive: true,
     },
@@ -828,7 +870,8 @@ export const PRODUCT_LIST = [
         originalPrice: 599.00,
         onSale: false,
         salePrice: 0.00,
-        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y53-2",        
+        imageUrl: "https://placehold.co/400x400/805ad5/ffffff?text=Y53-2",  
+        baseUrl: "", // Added empty baseUrl      
         stock: 100,
         isActive: false,
     },

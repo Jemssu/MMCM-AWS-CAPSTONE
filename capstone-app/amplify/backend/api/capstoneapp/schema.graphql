@@ -1,0 +1,17 @@
+type Product @model
+@auth(rules: [{ allow: public }]) {
+    id: ID!                    # Unique product ID (e.g., "Y53-1")
+    name: String!               # Product name
+    category: String!           # Product category (e.g., "FACE")
+    variant: String             # Product variant (e.g., "5301# Ivory White")
+    description: String         # Product description
+    originalPrice: Float!       # Original price of the product
+    onSale: Boolean!            # Whether product is on sale
+    salePrice: Float            # Sale price (0.00 if not on sale)
+    imageUrl: String            # Main product image
+    baseUrl: String             # Base product image (for category/variant previews)
+    stock: Int!                 # Inventory stock count
+    isActive: Boolean!          # Whether product is active/visible in catalog
+    createdAt: AWSDateTime      # Auto-managed by Amplify
+    updatedAt: AWSDateTime      # Auto-managed by Amplify
+}

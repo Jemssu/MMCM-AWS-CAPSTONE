@@ -1,5 +1,13 @@
 import React, { useState, useEffect, useRef } from "react"; 
-import { PRODUCT_LIST } from "../data/productList.js";
+import { Amplify } from "aws-amplify";
+import { generateClient } from "aws-amplify/api";
+import awsConfig from "../data/aws-exports.js"; // your Amplify config
+import { listProducts } from "../graphql/queries.js"; // your GraphQL queries
+
+Amplify.configure(awsConfig);
+
+// Create the API client
+const client = generateClient();
 
 // Footer Component
 const Footer = () => {
@@ -156,6 +164,9 @@ const LandingPage = () => {
   
   const headerRef = useRef(null);
   const [headerHeight, setHeaderHeight] = useState(0);
+
+  const [productList, setProductList] = useState([]);
+
   
   // Refs for sections
   const homeRef = useRef(null);
@@ -167,6 +178,21 @@ const LandingPage = () => {
       setHeaderHeight(headerRef.current.offsetHeight);
     }
   }, []);
+  
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        // Updated to use the v6 client
+        const result = await client.graphql({ query: listProducts });
+        const items = result.data.listProducts.items;
+        setProductList(items);  // store fetched products in state
+      } catch (err) {
+        console.error("Error fetching products:", err);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   // Reset to first page when category changes
   useEffect(() => {
@@ -177,7 +203,7 @@ const LandingPage = () => {
   const groupProductsByBase = () => {
     const groups = {};
     
-    PRODUCT_LIST.forEach(product => {
+    productList.forEach(product => {
       const baseId = product.id.substring(0, product.id.lastIndexOf('-'));
       if (!groups[baseId]) {
         groups[baseId] = [];
@@ -201,7 +227,7 @@ const LandingPage = () => {
   const productGroups = groupProductsByBase();
 
   // Get unique categories for filter
-  const categories = ["All", ...new Set(PRODUCT_LIST.map(product => product.category))];
+  const categories = ["All", ...new Set(productList.map(product => product.category))];
 
   // Filter products by category
   const filteredProductGroups = selectedCategory === "All" 
@@ -268,6 +294,11 @@ const LandingPage = () => {
     const baseId = productGroup.displayProduct.id.substring(0, productGroup.displayProduct.id.lastIndexOf('-'));
     const currentVariant = selectedVariants[baseId] || productGroup.displayProduct.variant;
     return productGroup.variants.find(v => v.variant === currentVariant) || productGroup.displayProduct;
+  };
+
+  const shouldShowSaleTag = (productGroup) => {
+    // Check if any variant in the product group has a sale
+    return productGroup.variants.some(variant => variant.onSale);
   };
 
   const shouldShowSoldOut = (productGroup) => {
@@ -482,14 +513,19 @@ const LandingPage = () => {
               const displayProduct = getDisplayProduct(productGroup);
               
               return (
-                <div key={index} className="bg-[#f5f5dc] rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden border border-[#d2b48c]">
-                  <div
-                    className="relative cursor-pointer transform hover:scale-105 transition-transform"
-                    onClick={() => openProductModal(productGroup)}
-                  >
-                    {/* Removed SALE badge from product card - now only shows in modal */}
+                <div 
+                  key={index} 
+                  className="bg-[#f5f5dc] rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden border border-[#d2b48c] cursor-pointer transform hover:scale-105 transition-transform relative"
+                  onClick={() => openProductModal(productGroup)}
+                >
+                  {shouldShowSaleTag(productGroup) && (
+                    <div className="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full z-10">
+                      SALE
+                    </div>
+                  )}
+                  <div className="relative">
                     <img
-                      src={displayProduct.baseUrl}
+                      src={productGroup.variants.find(v => v.id.endsWith('-1'))?.baseUrl || displayProduct.baseUrl}
                       alt={displayProduct.name}
                       className="w-full h-48 object-cover object-center"
                       onError={(e) =>
@@ -527,14 +563,7 @@ const LandingPage = () => {
                     )}
                     
                     <div className="mt-3">
-                      {displayProduct.onSale ? (
-                        <div className="flex items-center space-x-2">
-                          <span className="text-[#7a5c58] line-through">₱{displayProduct.originalPrice.toFixed(2)}</span>
-                          <span className="text-red-600 font-bold">₱{displayProduct.salePrice.toFixed(2)}</span>
-                        </div>
-                      ) : (
-                        <span className="text-[#4b2e2b] font-bold">₱{displayProduct.originalPrice.toFixed(2)}</span>
-                      )}
+                      <span className="text-[#4b2e2b] font-bold">₱{displayProduct.originalPrice.toFixed(2)}</span>
                       {shouldShowSoldOut(productGroup) && (
                         <p className="text-red-500 font-semibold text-sm mt-1">SOLD OUT</p>
                       )}
@@ -660,4 +689,5 @@ const LandingPage = () => {
     </div>
   );
 };
+
 export default LandingPage;
