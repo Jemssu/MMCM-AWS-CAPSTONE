@@ -39,9 +39,9 @@ const Footer = () => {
 
 function PhotoSlider() {
   const images = [
-    "https://cdn.discordapp.com/attachments/1416781049605914704/1417494241747140608/SnapInsta.to_466484450_542463788572211_2252057548062968539_n.jpg?ex=68caafe3&is=68c95e63&hm=0d573340266acb5986772fdc3a749a75cb3c9b00e014db3a8b34513ef973bd17&",
-    "https://cdn.discordapp.com/attachments/1416781049605914704/1417494256159035462/SnapInsta.to_466490430_570475658851457_6668399993285489413_n.jpg?ex=68caafe6&is=68c95e66&hm=89dd346617568c282e56361a7d5ca96037ea529fa71dc324cbf9363d627150fd&",
-    "https://cdn.discordapp.com/attachments/1416781049605914704/1417494271585550486/SnapInsta.to_466452505_1456305195051671_8460787894809979319_n.jpg?ex=68caafea&is=68c95e6a&hm=ce30db41c32ce3357c1b5ab3e3ae25ef8857ad896f624532670926427fc1070f&",
+    "https://my-products-images-list.s3.ap-southeast-1.amazonaws.com/Website/Slideshow/1.jpg",
+    "https://my-products-images-list.s3.ap-southeast-1.amazonaws.com/Website/Slideshow/2.jpg",
+    "https://my-products-images-list.s3.ap-southeast-1.amazonaws.com/Website/Slideshow/3.jpg"
   ];
   const [current, setCurrent] = React.useState(0);
 
@@ -320,7 +320,7 @@ const LandingPage = () => {
       >
         <div className="flex items-center space-x-3">
           <img 
-            src="https://media.discordapp.net/attachments/1416781049605914704/1417466815545606195/ShowIdeaLogo.png?ex=68cb3f18&is=68c9ed98&hm=f752c20a69fdd18ca8d0389a2f6c5ae2286c70b175ea239d393e91934165bbd7&=&format=webp&quality=lossless" 
+            src="https://my-products-images-list.s3.ap-southeast-1.amazonaws.com/Website/Logo/ShowIdeaLogo.png" 
             alt="Show Idéa Logo" 
             className="w-10 h-10 rounded-full object-cover"
           />
