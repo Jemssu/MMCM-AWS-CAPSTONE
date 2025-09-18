@@ -41,7 +41,7 @@ function PhotoSlider() {
   const images = [
     "https://my-products-images-list.s3.ap-southeast-1.amazonaws.com/Website/Slideshow/1.jpg",
     "https://my-products-images-list.s3.ap-southeast-1.amazonaws.com/Website/Slideshow/2.jpg",
-    "https://my-products-images-list.s3.ap-southeast-1.amazonaws.com/Website/Slideshow/3.jpg"
+    "https://my-products-images-list.s3.ap-southeast-1.amazonaws.com/Website/Slideshow/3.jpg",
   ];
   const [current, setCurrent] = React.useState(0);
 
