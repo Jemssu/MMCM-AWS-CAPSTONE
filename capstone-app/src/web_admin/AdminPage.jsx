@@ -24,7 +24,7 @@ const handleAWSLogin = () => {
           {/* Logo and Title */}
           <div className="mb-8">
             <img 
-              src="https://media.discordapp.net/attachments/1416781049605914704/1417466815545606195/ShowIdeaLogo.png?ex=68ca9658&is=68c944d8&hm=f2aac09e0efcdf498683ca3e599cf9236f24eee9a8967408aaa1b0bd3673ca11&=&format=webp&quality=lossless&width=385&height=385" 
+              src="https://my-products-images-list.s3.ap-southeast-1.amazonaws.com/Website/Logo/ShowIdeaLogo.png" 
               alt="Show Idéa Logo" 
               className="w-16 h-16 mx-auto mb-4 rounded-full object-cover"
             />
